@@ -2,11 +2,8 @@
 
 require_once 'autoload.php';
 
-use Alura\Banco\Modelo\Conta\ContaCorrente;
-use Alura\Banco\Modelo\Conta\ContaPoupanca;
-use Alura\Banco\Modelo\CPF;
-use Alura\Banco\Modelo\Endereco;
-use Alura\Banco\Modelo\Conta\Titular;
+use Alura\Banco\Modelo\Conta\{ContaCorrente, ContaPoupanca, Titular};
+use Alura\Banco\Modelo\{CPF, Endereco};
 
 $cpf = new Cpf('123.456.789-10');
 $endereco = new Endereco('Londrina', 'Centro', 'JK', '1234');
