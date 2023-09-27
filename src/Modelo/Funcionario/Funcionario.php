@@ -4,7 +4,7 @@ namespace Alura\Banco\Modelo\Funcionario;
 
 use Alura\Banco\Modelo\{Cpf, Pessoa};
 
-class Funcionario extends Pessoa
+abstract class Funcionario extends Pessoa
 {
     private string $cargo;
     private float $salario;
@@ -32,6 +32,16 @@ class Funcionario extends Pessoa
     public function getSalario(): float
     {
         return $this->salario;
+    }
+
+    public function aumentaSalario(float $valorAumento): void
+    {
+        if($valorAumento < 0) {
+            echo 'Valor de aumento deve ser positivo';
+            return;
+        }
+
+        $this->salario += $valorAumento;
     }
 
     //todos os funcionarios possuem uma bonificação padrão de 10%, porem este metodo é subscrito nas classes

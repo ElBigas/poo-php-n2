@@ -4,8 +4,9 @@ require_once 'autoload.php';
 
 use Alura\Banco\Service\ControleDeBonificacoes;
 use Alura\Banco\Modelo\Conta\{ContaCorrente, ContaPoupanca, Titular};
-use Alura\Banco\Modelo\{CPF, Endereco};
-use Alura\Banco\Modelo\Funcionario\Funcionario;
+use Alura\Banco\Modelo\CPF;
+use Alura\Banco\Modelo\Endereco;
+use Alura\Banco\Modelo\Funcionario\{Gerente, Diretor, Desenvolvedor};
 
 $cpf = new Cpf('123.456.789-10');
 /*$endereco = new Endereco('Londrina', 'Centro', 'JK', '1234');
@@ -23,11 +24,13 @@ $conta2->depositar(100);
 $conta2->sacar(10);
 $conta2->getSaldo();*/
 
-$funcionario1 = new Funcionario('Emanuel', $cpf, 'Gerente', 1000);
-$funcionario2 = new Funcionario('Maria Eduarda', $cpf, 'Assistente', 3000);
+$funcionario1 = new Gerente('Emanuel', $cpf, 'Estagiario', 1000);
+$funcionario2 = new Desenvolvedor('Manoel', $cpf, 'Desenvolvedor', 1350);
+$funcionario3 = new Diretor('Maria Eduarda', $cpf, 'Diretor', 5000);
 
 $controlador = new ControleDeBonificacoes();
 $controlador->adicionaBonificacoes($funcionario1);
 $controlador->adicionaBonificacoes($funcionario2);
+$controlador->adicionaBonificacoes($funcionario3);
 
 echo $controlador->getTotal();
