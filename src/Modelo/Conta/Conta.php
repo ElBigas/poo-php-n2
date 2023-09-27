@@ -78,7 +78,6 @@ abstract class Conta
 
     abstract protected function percentualTarifa() : float;
 
-
 }
 
 /* esta classe é a classe genérica de conta corrente e conta poupança,
