@@ -44,8 +44,12 @@ abstract class Funcionario extends Pessoa
 
     //todos os funcionarios possuem uma bonificação padrão de 10%, porem este metodo é subscrito nas classes
     //filhas diretor e gerente
+    /*
     public function calculaBonificacao(): float
     {
         return $this->salario * 0.1;
-    }
+    }*/
+
+    //agora não há mais bonificação padrão
+    abstract public function calculaBonificacao(): float;
 }

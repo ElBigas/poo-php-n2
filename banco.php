@@ -31,9 +31,12 @@ $funcionario2->sobeDeNivel();
 
 $funcionario3 = new Diretor('Maria Eduarda', $cpf, 5000);
 
+$funcionario4 = new \Alura\Banco\Modelo\Funcionario\EditorVideo('Matheus', $cpf, 2350);
+
 $controlador = new ControleDeBonificacoes();
 $controlador->adicionaBonificacoes($funcionario1);
 $controlador->adicionaBonificacoes($funcionario2);
 $controlador->adicionaBonificacoes($funcionario3);
+$controlador->adicionaBonificacoes($funcionario4);
 
 echo $controlador->getTotal();
