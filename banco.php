@@ -24,9 +24,12 @@ $conta2->depositar(100);
 $conta2->sacar(10);
 $conta2->getSaldo();*/
 
-$funcionario1 = new Gerente('Emanuel', $cpf, 'Estagiario', 1000);
-$funcionario2 = new Desenvolvedor('Manoel', $cpf, 'Desenvolvedor', 1350);
-$funcionario3 = new Diretor('Maria Eduarda', $cpf, 'Diretor', 5000);
+$funcionario1 = new Gerente('Emanuel', $cpf, 1000);
+$funcionario2 = new Desenvolvedor('Manoel', $cpf, 1350);
+
+$funcionario2->sobeDeNivel();
+
+$funcionario3 = new Diretor('Maria Eduarda', $cpf, 5000);
 
 $controlador = new ControleDeBonificacoes();
 $controlador->adicionaBonificacoes($funcionario1);

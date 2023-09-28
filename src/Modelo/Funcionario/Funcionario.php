@@ -6,15 +6,13 @@ use Alura\Banco\Modelo\{Cpf, Pessoa};
 
 abstract class Funcionario extends Pessoa
 {
-    private string $cargo;
     private float $salario;
 
-    public function __construct(string $nome, Cpf $cpf, string $cargo, float $salario)
+    public function __construct(string $nome, Cpf $cpf, float $salario)
     {
         //irá passar o nome e o cpf para a classe pai
         //não é obrigatório no PHP, mas é sempre bom fazer isso
         parent::__construct($nome, $cpf);
-        $this->cargo = $cargo;
         $this->salario = $salario;
     }
 
