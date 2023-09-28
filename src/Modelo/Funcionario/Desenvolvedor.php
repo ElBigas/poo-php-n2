@@ -4,7 +4,7 @@ namespace Alura\Banco\Modelo\Funcionario;
 
 class Desenvolvedor extends Funcionario
 {
-    public function sobeDeNivel()
+    public function sobeDeNivel(): void
     {
         $this->aumentaSalario($this->getSalario() * 0.75);
     }
