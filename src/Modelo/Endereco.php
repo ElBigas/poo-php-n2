@@ -9,8 +9,10 @@ namespace Alura\Banco\Modelo;
  * @property-read $numero
  */
 
-class Endereco
+final class Endereco
 {
+    use AcessoPropriedades;
+
     private string $cidade;
     private string $bairro;
     private string $rua;
@@ -48,18 +50,6 @@ class Endereco
     public function __toString(): string
     {
         return "{$this->rua}, {$this->numero}, {$this->bairro}, {$this->cidade}";
-    }
-
-    //com este metodo podemos acessar metodos que não existem ou são privados
-    public function __get(string $nomeAtributo)
-    {
-        $metodo = 'get' . ucfirst($nomeAtributo);
-        return $this->$metodo();
-    }
-
-    public function __set(string $nomeAtributo, $value): void
-    {
-        $this->$nomeAtributo = $value;
     }
 
 }
