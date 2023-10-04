@@ -16,5 +16,7 @@ $funcionario = new Diretor('Maria', $cpf, 4000);
 $autenticador = new Autenticador();
 
 $autenticador->tentaLogin($titular, 'abcd');
+
 echo PHP_EOL;
+
 $autenticador->tentaLogin($funcionario, '1234');
