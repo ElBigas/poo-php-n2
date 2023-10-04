@@ -2,13 +2,11 @@
 
 namespace Alura\Banco\Modelo;
 
-
 /**
- * @package
- * @property-read string $cidade
- * @property-read string $rua
- * @property-read string $bairro
- * @property-read string $numero
+ * @property-read $bairro
+ * @property-read $rua
+ * @property-read $cidade
+ * @property-read $numero
  */
 
 class Endereco
@@ -57,6 +55,11 @@ class Endereco
     {
         $metodo = 'get' . ucfirst($nomeAtributo);
         return $this->$metodo();
+    }
+
+    public function __set(string $nomeAtributo, $value): void
+    {
+        $this->$nomeAtributo = $value;
     }
 
 }
