@@ -21,6 +21,6 @@ $conta2 = new ContaCorrente($emanuel);
 
 try {
     $conta1->depositar(-100);
-} catch (InvalidArgumentException $exception){
-    echo "Valor precisa ser positivo";
+} catch (Throwable $exception) {
+    echo "Erro: " . $exception->getMessage();
 }

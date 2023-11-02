@@ -39,8 +39,8 @@ abstract class Conta
 
     public function depositar(float $valorADepositar): void
     {
-        if ($valorADepositar <= 0){
-            throw new \InvalidArgumentException();
+        if ($valorADepositar <= 0) {
+            throw new \InvalidArgumentException("O valor a depositar deve ser maior que zero.");
         }
 
         $this->saldo += $valorADepositar;
