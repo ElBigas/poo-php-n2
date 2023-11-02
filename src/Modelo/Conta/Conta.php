@@ -31,7 +31,7 @@ abstract class Conta
 
         //se o valor for insufiente, será lançada uma exceção
         if($valorSaque > $this->saldo) {
-            throw new SaldoInsuficienteException($valorSaque, $this->saldo);
+            throw new SaldoInsuficienteException($this->saldo);
         }
 
         $this->saldo -= $valorSaque;
@@ -49,8 +49,7 @@ abstract class Conta
     public function transferir(float $valorATransferir, Conta $contaDeDestino) : void {
 
         if ($valorATransferir > $this->saldo){
-            echo "Saldo indisponível";
-            return;
+            throw new SaldoInsuficienteException($this->saldo);
         }
 
         $this->sacar($valorATransferir);
