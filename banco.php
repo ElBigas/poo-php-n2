@@ -13,7 +13,12 @@ use Alura\Banco\Modelo\Funcionario\{Gerente, Diretor, Desenvolvedor};
 use http\Exception\InvalidArgumentException;
 use mysql_xdevapi\Exception;
 
-$cpf = new Cpf('123.456.789-10');
+try {
+    $cpf = new Cpf('123.456.789-10');
+} catch (Throwable $exception) {
+    echo "Erro: " . $exception->getMessage();
+}
+
 $endereco = new Endereco('Londrina', 'Centro', 'JK', '1234');
 
 try {

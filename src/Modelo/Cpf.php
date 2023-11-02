@@ -26,8 +26,7 @@ final class Cpf
                 ]
         ]);
             if ($numero === false) {
-                echo "Cpf inválido";
-                exit();
+                throw new \InvalidArgumentException("CPF inválido");
             }
     }
 }
