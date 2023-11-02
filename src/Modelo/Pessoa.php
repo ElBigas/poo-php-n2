@@ -28,9 +28,8 @@ abstract class Pessoa
 
     protected function validarNome(string $nomeTitular): void //este método é privado pois é usado somente para uma validação interna
     {
-        if (strlen($nomeTitular) <= 5) {
-            echo "Nome precisa ter pelo menos 5 caracteres";
-            exit();
+        if (strlen($nomeTitular) < 5) {
+            throw new NomeInvalidoException();
         }
     }
 }
