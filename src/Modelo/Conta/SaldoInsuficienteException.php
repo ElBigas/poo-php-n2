@@ -8,9 +8,9 @@ namespace Alura\Banco\Modelo\Conta;
 
 class SaldoInsuficienteException extends \DomainException
 {
-    public function __construct(float $valorSaque, float $saldoAtual)
+    public function __construct(float $saldoAtual)
     {
-        $message = "Você tentou sacar R$$valorSaque, mas seu saldo é R$$saldoAtual";
+        $message = "Saldo indisponível, mas seu saldo é R$$saldoAtual";
         parent::__construct($message);
     }
 }
